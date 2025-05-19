@@ -1,4 +1,4 @@
-module github.com/Ukkenjijo/riverside-proto/auth
+module github.com/Ukkenjijo/riverside-proto/golang/auth
 
 go 1.24.3
 
