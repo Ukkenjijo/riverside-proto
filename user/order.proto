@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package auth;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Ukkenjijo/riverside-proto/auth";
+
+// AuthService defines the authentication-related operations.
+service AuthService {
+  // Register creates a new user account.
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+  
+  // Login authenticates a user and returns tokens.
+  rpc Login(LoginRequest) returns (LoginResponse);
+  
+  // RefreshToken generates a new access token using a refresh token.
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+  
+  // GetUserInfo retrieves user information based on the provided token.
+  rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse);
+}
+
+// RegisterRequest contains the data required to register a new user.
+message RegisterRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+}
+
+// RegisterResponse returns the result of the registration.
+message RegisterResponse {
+  uint32 id = 1;
+  bool success = 2;
+  string error = 3; // Optional error message if registration fails
+}
+
+// LoginRequest contains credentials for user login.
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// LoginResponse contains tokens and user info upon successful login.
+message LoginResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  uint32 id = 3;
+  string error = 4; // Optional error message if login fails
+}
+
+// RefreshTokenRequest contains the refresh token to get a new access token.
+message RefreshTokenRequest {
+  string refresh_token = 1;
+}
+
+// RefreshTokenResponse contains the new access token.
+message RefreshTokenResponse {
+  string access_token = 1;
+  string error = 2; // Optional error message if refresh fails
+}
+
+// GetUserInfoRequest contains the token to fetch user details.
+message GetUserInfoRequest {
+  string access_token = 1;
+}
+
+// GetUserInfoResponse contains user information.
+message GetUserInfoResponse {
+  uint32 id = 1;
+  string username = 2;
+  string email = 3;
+  google.protobuf.Timestamp created_at = 4;
+  string error = 5; // Optional error message if retrieval fails
+}
