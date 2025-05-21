@@ -486,6 +486,206 @@ func (x *GetUserInfoResponse) GetError() string {
 	return ""
 }
 
+type SendOTPRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendOTPRequest) Reset() {
+	*x = SendOTPRequest{}
+	mi := &file_user_auth_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendOTPRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendOTPRequest) ProtoMessage() {}
+
+func (x *SendOTPRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_auth_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendOTPRequest.ProtoReflect.Descriptor instead.
+func (*SendOTPRequest) Descriptor() ([]byte, []int) {
+	return file_user_auth_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *SendOTPRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type SendOTPResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SendOTPResponse) Reset() {
+	*x = SendOTPResponse{}
+	mi := &file_user_auth_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SendOTPResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SendOTPResponse) ProtoMessage() {}
+
+func (x *SendOTPResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_auth_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SendOTPResponse.ProtoReflect.Descriptor instead.
+func (*SendOTPResponse) Descriptor() ([]byte, []int) {
+	return file_user_auth_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *SendOTPResponse) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+func (x *SendOTPResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type ValidateOTPRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Code          string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ValidateOTPRequest) Reset() {
+	*x = ValidateOTPRequest{}
+	mi := &file_user_auth_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidateOTPRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateOTPRequest) ProtoMessage() {}
+
+func (x *ValidateOTPRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_user_auth_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateOTPRequest.ProtoReflect.Descriptor instead.
+func (*ValidateOTPRequest) Descriptor() ([]byte, []int) {
+	return file_user_auth_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *ValidateOTPRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *ValidateOTPRequest) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+type ValidateOTPResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Valid         bool                   `protobuf:"varint,1,opt,name=valid,proto3" json:"valid,omitempty"`
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ValidateOTPResponse) Reset() {
+	*x = ValidateOTPResponse{}
+	mi := &file_user_auth_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidateOTPResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateOTPResponse) ProtoMessage() {}
+
+func (x *ValidateOTPResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_user_auth_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateOTPResponse.ProtoReflect.Descriptor instead.
+func (*ValidateOTPResponse) Descriptor() ([]byte, []int) {
+	return file_user_auth_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *ValidateOTPResponse) GetValid() bool {
+	if x != nil {
+		return x.Valid
+	}
+	return false
+}
+
+func (x *ValidateOTPResponse) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
 var File_user_auth_proto protoreflect.FileDescriptor
 
 const file_user_auth_proto_rawDesc = "" +
@@ -520,12 +720,25 @@ const file_user_auth_proto_rawDesc = "" +
 	"\x05email\x18\x03 \x01(\tR\x05email\x129\n" +
 	"\n" +
 	"created_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x12\x14\n" +
-	"\x05error\x18\x05 \x01(\tR\x05error2\x85\x02\n" +
+	"\x05error\x18\x05 \x01(\tR\x05error\"&\n" +
+	"\x0eSendOTPRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"E\n" +
+	"\x0fSendOTPResponse\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage\">\n" +
+	"\x12ValidateOTPRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\x12\x12\n" +
+	"\x04code\x18\x02 \x01(\tR\x04code\"E\n" +
+	"\x13ValidateOTPResponse\x12\x14\n" +
+	"\x05valid\x18\x01 \x01(\bR\x05valid\x12\x18\n" +
+	"\amessage\x18\x02 \x01(\tR\amessage2\x81\x03\n" +
 	"\vAuthService\x129\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x16.auth.RegisterResponse\x120\n" +
 	"\x05Login\x12\x12.auth.LoginRequest\x1a\x13.auth.LoginResponse\x12E\n" +
 	"\fRefreshToken\x12\x19.auth.RefreshTokenRequest\x1a\x1a.auth.RefreshTokenResponse\x12B\n" +
-	"\vGetUserInfo\x12\x18.auth.GetUserInfoRequest\x1a\x19.auth.GetUserInfoResponseB+Z)github.com/Ukkenjijo/riverside-proto/authb\x06proto3"
+	"\vGetUserInfo\x12\x18.auth.GetUserInfoRequest\x1a\x19.auth.GetUserInfoResponse\x126\n" +
+	"\aSendOTP\x12\x14.auth.SendOTPRequest\x1a\x15.auth.SendOTPResponse\x12B\n" +
+	"\vValidateOTP\x12\x18.auth.ValidateOTPRequest\x1a\x19.auth.ValidateOTPResponseB7Z5github.com/Ukkenjijo/riverside-proto/golang/auth;authb\x06proto3"
 
 var (
 	file_user_auth_proto_rawDescOnce sync.Once
@@ -539,7 +752,7 @@ func file_user_auth_proto_rawDescGZIP() []byte {
 	return file_user_auth_proto_rawDescData
 }
 
-var file_user_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_user_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_user_auth_proto_goTypes = []any{
 	(*RegisterRequest)(nil),      // 0: auth.RegisterRequest
 	(*RegisterResponse)(nil),     // 1: auth.RegisterResponse
@@ -549,23 +762,31 @@ var file_user_auth_proto_goTypes = []any{
 	(*RefreshTokenResponse)(nil), // 5: auth.RefreshTokenResponse
 	(*GetUserInfoRequest)(nil),   // 6: auth.GetUserInfoRequest
 	(*GetUserInfoResponse)(nil),  // 7: auth.GetUserInfoResponse
-	(*timestamp.Timestamp)(nil),  // 8: google.protobuf.Timestamp
+	(*SendOTPRequest)(nil),       // 8: auth.SendOTPRequest
+	(*SendOTPResponse)(nil),      // 9: auth.SendOTPResponse
+	(*ValidateOTPRequest)(nil),   // 10: auth.ValidateOTPRequest
+	(*ValidateOTPResponse)(nil),  // 11: auth.ValidateOTPResponse
+	(*timestamp.Timestamp)(nil),  // 12: google.protobuf.Timestamp
 }
 var file_user_auth_proto_depIdxs = []int32{
-	8, // 0: auth.GetUserInfoResponse.created_at:type_name -> google.protobuf.Timestamp
-	0, // 1: auth.AuthService.Register:input_type -> auth.RegisterRequest
-	2, // 2: auth.AuthService.Login:input_type -> auth.LoginRequest
-	4, // 3: auth.AuthService.RefreshToken:input_type -> auth.RefreshTokenRequest
-	6, // 4: auth.AuthService.GetUserInfo:input_type -> auth.GetUserInfoRequest
-	1, // 5: auth.AuthService.Register:output_type -> auth.RegisterResponse
-	3, // 6: auth.AuthService.Login:output_type -> auth.LoginResponse
-	5, // 7: auth.AuthService.RefreshToken:output_type -> auth.RefreshTokenResponse
-	7, // 8: auth.AuthService.GetUserInfo:output_type -> auth.GetUserInfoResponse
-	5, // [5:9] is the sub-list for method output_type
-	1, // [1:5] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	12, // 0: auth.GetUserInfoResponse.created_at:type_name -> google.protobuf.Timestamp
+	0,  // 1: auth.AuthService.Register:input_type -> auth.RegisterRequest
+	2,  // 2: auth.AuthService.Login:input_type -> auth.LoginRequest
+	4,  // 3: auth.AuthService.RefreshToken:input_type -> auth.RefreshTokenRequest
+	6,  // 4: auth.AuthService.GetUserInfo:input_type -> auth.GetUserInfoRequest
+	8,  // 5: auth.AuthService.SendOTP:input_type -> auth.SendOTPRequest
+	10, // 6: auth.AuthService.ValidateOTP:input_type -> auth.ValidateOTPRequest
+	1,  // 7: auth.AuthService.Register:output_type -> auth.RegisterResponse
+	3,  // 8: auth.AuthService.Login:output_type -> auth.LoginResponse
+	5,  // 9: auth.AuthService.RefreshToken:output_type -> auth.RefreshTokenResponse
+	7,  // 10: auth.AuthService.GetUserInfo:output_type -> auth.GetUserInfoResponse
+	9,  // 11: auth.AuthService.SendOTP:output_type -> auth.SendOTPResponse
+	11, // 12: auth.AuthService.ValidateOTP:output_type -> auth.ValidateOTPResponse
+	7,  // [7:13] is the sub-list for method output_type
+	1,  // [1:7] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_user_auth_proto_init() }
@@ -579,7 +800,7 @@ func file_user_auth_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_auth_proto_rawDesc), len(file_user_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

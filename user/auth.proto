@@ -4,7 +4,7 @@ package auth;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/Ukkenjijo/riverside-proto/auth";
+option go_package = "github.com/Ukkenjijo/riverside-proto/golang/auth;auth";
 
 // AuthService defines the authentication-related operations.
 service AuthService {
