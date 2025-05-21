@@ -19,6 +19,9 @@ service AuthService {
   
   // GetUserInfo retrieves user information based on the provided token.
   rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse);
+
+  rpc SendOTP(SendOTPRequest) returns (SendOTPResponse);
+  rpc ValidateOTP(ValidateOTPRequest) returns (ValidateOTPResponse);
 }
 
 // RegisterRequest contains the data required to register a new user.
@@ -72,4 +75,23 @@ message GetUserInfoResponse {
   string email = 3;
   google.protobuf.Timestamp created_at = 4;
   string error = 5; // Optional error message if retrieval fails
+}
+
+message SendOTPRequest {
+  string email = 1;
+}
+
+message SendOTPResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ValidateOTPRequest {
+  string email = 1;
+  string code = 2;
+}
+
+message ValidateOTPResponse {
+  bool valid = 1;
+  string message = 2;
 }
