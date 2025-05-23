@@ -57,10 +57,11 @@ message RefreshTokenRequest {
   string refresh_token = 1;
 }
 
-// RefreshTokenResponse contains the new access token.
+// RefreshTokenResponse contains the new access token and a new refresh token.
 message RefreshTokenResponse {
   string access_token = 1;
-  string error = 2; // Optional error message if refresh fails
+  string refresh_token = 2;  // New refresh token to be used for the next refresh
+  string error = 3;          // Optional error message if refresh fails
 }
 
 // GetUserInfoRequest contains the token to fetch user details.

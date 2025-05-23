@@ -311,11 +311,12 @@ func (x *RefreshTokenRequest) GetRefreshToken() string {
 	return ""
 }
 
-// RefreshTokenResponse contains the new access token.
+// RefreshTokenResponse contains the new access token and a new refresh token.
 type RefreshTokenResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	Error         string                 `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"` // Optional error message if refresh fails
+	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"` // New refresh token to be used for the next refresh
+	Error         string                 `protobuf:"bytes,3,opt,name=error,proto3" json:"error,omitempty"`                                   // Optional error message if refresh fails
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -353,6 +354,13 @@ func (*RefreshTokenResponse) Descriptor() ([]byte, []int) {
 func (x *RefreshTokenResponse) GetAccessToken() string {
 	if x != nil {
 		return x.AccessToken
+	}
+	return ""
+}
+
+func (x *RefreshTokenResponse) GetRefreshToken() string {
+	if x != nil {
+		return x.RefreshToken
 	}
 	return ""
 }
@@ -709,10 +717,11 @@ const file_auth_proto_rawDesc = "" +
 	"\x02id\x18\x03 \x01(\rR\x02id\x12\x14\n" +
 	"\x05error\x18\x04 \x01(\tR\x05error\":\n" +
 	"\x13RefreshTokenRequest\x12#\n" +
-	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"O\n" +
+	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"t\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12\x14\n" +
-	"\x05error\x18\x02 \x01(\tR\x05error\"7\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\x12\x14\n" +
+	"\x05error\x18\x03 \x01(\tR\x05error\"7\n" +
 	"\x12GetUserInfoRequest\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\xa8\x01\n" +
 	"\x13GetUserInfoResponse\x12\x0e\n" +
